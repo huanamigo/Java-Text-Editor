@@ -15,9 +15,11 @@ public class TextEditor extends JFrame implements ActionListener {
     JComboBox fontBox;
 
     TextEditor(){
+        int windowWidth = 500;
+        int windowHeight = 500;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Lewy Notepad");
-        this.setSize(500, 500);
+        this.setSize(windowWidth, windowHeight);
         this.setLayout(new FlowLayout());
         this.setLocationRelativeTo(null);
 
@@ -27,7 +29,7 @@ public class TextEditor extends JFrame implements ActionListener {
         textArea.setFont(new Font("Arial", Font.PLAIN, 20));
 
         scrollPane = new JScrollPane(textArea);
-        scrollPane.setPreferredSize(new Dimension(450, 450));
+        scrollPane.setPreferredSize(new Dimension((int) (windowWidth *0.95), (int) (windowHeight *0.85)));
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 
         fontLabel = new JLabel("Font:");
